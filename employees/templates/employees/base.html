@@ -1,0 +1,20 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}People Directory{% endblock %} | Northstar</title>
+    <link rel="stylesheet" href="{% static 'employees/styles.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="wordmark" href="{% url 'employees:list' %}"><span class="mark">N</span> Northstar <span class="wordmark-muted">/ People</span></a>
+        <a class="admin-link" href="{% url 'admin:index' %}">Admin <span aria-hidden="true">&#8599;</span></a>
+    </header>
+    <main class="page-shell">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">People Operations <span>Employee directory</span></footer>
+</body>
+</html>

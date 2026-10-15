@@ -1,0 +1,21 @@
+{% extends 'employees/base.html' %}
+{% block title %}{{ employee.name }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'employees:list' %}">&#8592; <span>All employees</span></a>
+<section class="detail-heading">
+    <div class="detail-avatar">{{ employee.name|first|upper }}</div>
+    <div><p class="eyebrow">EMPLOYEE / {{ employee.employee_id }}</p><h1>{{ employee.name }}</h1><p class="subheading">{{ employee.designation }} <span class="dot">&#183;</span> {{ employee.department }}</p></div>
+    <span class="status status-{{ employee.status|lower }} detail-status">{{ employee.status }}</span>
+</section>
+<section class="profile" aria-label="Employee information">
+    <h2>Contact &amp; employment</h2>
+    <dl class="profile-grid">
+        <div><dt>Employee ID</dt><dd>{{ employee.employee_id }}</dd></div>
+        <div><dt>Email address</dt><dd><a href="mailto:{{ employee.email }}">{{ employee.email }}</a></dd></div>
+        <div><dt>Phone number</dt><dd><a href="tel:{{ employee.phone }}">{{ employee.phone }}</a></dd></div>
+        <div><dt>Department</dt><dd>{{ employee.department }}</dd></div>
+        <div><dt>Designation</dt><dd>{{ employee.designation }}</dd></div>
+        <div><dt>Date of joining</dt><dd>{{ employee.date_of_joining|date:'F j, Y' }}</dd></div>
+    </dl>
+</section>
+{% endblock %}

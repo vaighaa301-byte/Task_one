@@ -1,0 +1,7 @@
+[
+  {"model":"employees.employee","pk":1,"fields":{"employee_id":"EMP-1001","name":"Maya Chen","email":"maya.chen@example.com","phone":"+1-555-0101","department":"Engineering","designation":"Software Engineer","date_of_joining":"2023-02-13","status":"Active"}},
+  {"model":"employees.employee","pk":2,"fields":{"employee_id":"EMP-1002","name":"Noah Williams","email":"noah.williams@example.com","phone":"+1-555-0102","department":"People","designation":"People Partner","date_of_joining":"2022-08-01","status":"Active"}},
+  {"model":"employees.employee","pk":3,"fields":{"employee_id":"EMP-1003","name":"Amara Okafor","email":"amara.okafor@example.com","phone":"+1-555-0103","department":"Design","designation":"Product Designer","date_of_joining":"2024-01-22","status":"Active"}},
+  {"model":"employees.employee","pk":4,"fields":{"employee_id":"EMP-1004","name":"Leo Martin","email":"leo.martin@example.com","phone":"+1-555-0104","department":"Finance","designation":"Financial Analyst","date_of_joining":"2021-11-08","status":"Inactive"}},
+  {"model":"employees.employee","pk":5,"fields":{"employee_id":"EMP-1005","name":"Sofia Patel","email":"sofia.patel@example.com","phone":"+1-555-0105","department":"Operations","designation":"Operations Manager","date_of_joining":"2020-06-15","status":"Active"}}
+]

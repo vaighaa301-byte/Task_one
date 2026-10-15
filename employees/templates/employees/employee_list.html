@@ -1,0 +1,26 @@
+{% extends 'employees/base.html' %}
+{% block title %}Employee directory{% endblock %}
+{% block content %}
+<section class="page-heading">
+    <div>
+        <p class="eyebrow">COMPANY / PEOPLE</p>
+        <h1>Employee directory</h1>
+        <p class="subheading">A clear view of the people moving us forward.</p>
+    </div>
+    <div class="count"><strong>{{ employees|length|stringformat:"02d" }}</strong><span>TEAM MEMBERS</span></div>
+</section>
+<section class="directory" aria-label="Employees">
+    <div class="table-head"><span>NAME</span><span>DEPARTMENT</span><span>DESIGNATION</span><span>STATUS</span><span></span></div>
+    {% for employee in employees %}
+    <a class="employee-row" href="{% url 'employees:detail' employee.pk %}">
+        <span class="person"><span class="avatar">{{ employee.name|first|upper }}</span><span><strong>{{ employee.name }}</strong><small>{{ employee.employee_id }}</small></span></span>
+        <span class="cell department">{{ employee.department }}</span>
+        <span class="cell designation">{{ employee.designation }}</span>
+        <span class="cell"><span class="status status-{{ employee.status|lower }}">{{ employee.status }}</span></span>
+        <span class="row-arrow" aria-hidden="true">&#8594;</span>
+    </a>
+    {% empty %}
+    <div class="empty-state"><strong>No employees yet</strong><span>Add your first record in Django Admin.</span><a href="{% url 'admin:employees_employee_add' %}">Add employee <span aria-hidden="true">&#8599;</span></a></div>
+    {% endfor %}
+</section>
+{% endblock %}
